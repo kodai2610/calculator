@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>電卓</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <div class="bl_app">
+      <div class="bl_display"><span class="el_output">0</span></div><!--bl_display-->
+      <div class="bl_crossTable">
+        <table>
+          <tbody>
+            <tr>
+              <td><span class="el_btn el_btn__dark">AC</span></td>
+              <td><span class="el_btn el_btn__dark">+/-</span></td>
+              <td><span class="el_btn el_btn__dark">%</span></td>
+              <td><span class="el_btn el_btn__dark">÷</span></td>
+            </tr>
+            <tr>
+              <td><span class="el_btn">7</span></td>
+              <td><span class="el_btn">8</span></td>
+              <td><span class="el_btn">9</span></td>
+              <td><span class="el_btn el_btn__dark">×</span></td>
+            </tr>
+            <tr>
+              <td><span class="el_btn">4</span></td>
+              <td><span class="el_btn">5</span></td>
+              <td><span class="el_btn">6</span></td>
+              <td><span class="el_btn el_btn__dark">-</span></td>
+            </tr>
+            <tr>
+              <td><span class="el_btn">1</span></td>
+              <td><span class="el_btn">2</span></td>
+              <td><span class="el_btn">3</span></td>
+              <td><span class="el_btn el_btn__dark">+</span></td>
+            </tr>
+            <tr>
+              <td colspan="2"><span class="el_btn el_btn__big">0</span></td>
+              <td><span class="el_btn">.</span></td>
+              <td><span class="el_btn el_btn__blue">=</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div><!--bl_crossTable-->
+    </div><!--bl_app-->
+  </div><!--#app-->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

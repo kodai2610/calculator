@@ -1,0 +1,139 @@
+//カラー
+$white : #fff;
+$blue : #4169e1;
+$medGray : #dadce0;
+$lightGray : #f1f3f4;
+$black : rgb(32,33, 36);
+
+//ブレイクポイント
+$breakpoints : (
+  s : 'only screen and (max-width: 420px)',
+);
+
+@mixin media($breakpoint) {
+  @media #{map_get($breakpoints, $breakpoint)} {
+    @content
+  }
+};
+
+
+//スタイル
+
+* {
+  box-sizing: border-box;
+}
+
+#app {
+  padding-top: 50px;
+  width: 100%;
+  height: 100%;
+  @include media(s) {
+    padding-top: 10px;
+  }
+}
+
+.bl_app {
+  margin: 0 auto;
+  border-radius: 20px;
+  color: $black;
+  width: 375px;
+  height: 670px;
+  background-color: $white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+  @include media(s) {
+    width: 100%;
+    height: 170vw;
+  }
+}
+
+.bl_display {
+  padding: 0 29px;
+  overflow-x: hidden;
+  height: 180px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  @include media(s) {
+    height: 46vw;
+    padding: 0 7vw;
+  }
+}
+
+.el_output {
+  font-size: 60px;
+  @include media(s) {
+    font-size: 16vw;
+  }
+}
+
+.bl_crossTable {
+  height: calc(100% - 180px);
+  padding-left: 5px;
+  padding-right: 5px;
+
+  @include media(s) {
+    height: 124vw; // 170 - 46
+    padding-left: 1.3vw;
+    padding-right: 1.3vw;
+  }
+  &  table {
+    width: 100%;
+    text-align: center;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing : 0 15px; // (490px - 80px * 5) / 6  
+    margin-top: -15px;
+
+    @include media(s) {
+      border-spacing: 0 3.16666vw; // (124vw - 21vw * 5) / 6
+      margin-top: -3.1666666vw;
+    }
+  }
+
+  &  td {
+    padding: 0;
+  }
+}
+
+.el_btn {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 50%;
+  background-color: $lightGray;
+  cursor: pointer;
+
+  @include media(s) {
+    width: 21vw;
+    height: 21vw;
+    line-height: 21vw;
+    font-size: 5.8vw;
+  }
+
+  &__dark {
+    background-color: $medGray;
+  }
+
+  &__blue {
+    background-color: $blue;
+    color: $white;
+  }
+
+  &__big {
+    display: block;    
+    width: 100%;
+    border-radius: 1000px;
+    text-align: left;
+    padding-left: 40px;
+
+    @include media(s) {
+      padding-left: 10vw;
+    }
+  }
+}
+
+
