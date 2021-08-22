@@ -62,6 +62,7 @@ $breakpoints : (
 
 .el_output {
   font-size: 60px;
+  overflow: auto;
   @include media(s) {
     font-size: 16vw;
   }
