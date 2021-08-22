@@ -21,20 +21,20 @@
               <td><span class="el_btn el_btn__dark" v-on:click="inputFunc('/')">÷</span></td>
             </tr>
             <tr>
-              <td v-for="number in [7,8,9]"><span class="el_btn" v-on:click="inputNumber(number)">{{number}}</span></td>
+              <td v-for="number in ['7','8','9']"><span class="el_btn" v-on:click="inputNumber(number)">{{number}}</span></td>
               <td><span class="el_btn el_btn__dark" v-on:click="inputFunc('*')">×</span></td>
             </tr>
             <tr>
-              <td v-for="number in [4,5,6]"><span class="el_btn" v-on:click="inputNumber(number)">{{number}}</span></td>
+              <td v-for="number in ['4','5','6']"><span class="el_btn" v-on:click="inputNumber(number)">{{number}}</span></td>
               <td><span class="el_btn el_btn__dark" v-on:click="inputFunc('-')">-</span></td>
             </tr>
             <tr>
-              <td v-for="number in [1,2,3]"><span class="el_btn" v-on:click="inputNumber(number)">{{number}}</span></td>
+              <td v-for="number in ['1','2','3']"><span class="el_btn" v-on:click="inputNumber(number)">{{number}}</span></td>
               <td><span class="el_btn el_btn__dark" v-on:click="inputFunc('+')">+</span></td>
             </tr>
             <tr>
               <td colspan="2"><span class="el_btn el_btn__big" v-on:click="inputNumber(0)">0</span></td>
-              <td><span class="el_btn" >.</span></td>
+              <td><span class="el_btn" v-on:click="inputNumber('.')">.</span></td>
               <td><span class="el_btn el_btn__blue" v-on:click="equal">=</span></td>
             </tr>
           </tbody> 
