@@ -107,7 +107,7 @@ $breakpoints : (
   border-radius: 50%;
   background-color: $lightGray;
   cursor: pointer;
-
+  user-select: none;
   @include media(s) {
     width: 21vw;
     height: 21vw;

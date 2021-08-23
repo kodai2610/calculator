@@ -1,17 +1,18 @@
 var app = new Vue({
   el : '#app',
-  data : {
-    memory : null,
-    func : null,
-    inputValue : '0', //入力された値
-    outputValue : '0', //表示する値
+  data : { 
+    memory : null, //number
+    func : null, //string
+    inputValue : '0', //string 
+    outputValue : '0', //string
     isError : false, //エラー時かどうか
   },
   methods : {
     error() { //エラー時のメソッド
       this.memory = null;
       this.func = null;
-      inputValue = 0;
+      this.inputValue = '0';
+      this.outputValue = '0';
       //データを初期化
       isError = true;
     },
@@ -39,7 +40,9 @@ var app = new Vue({
       }
       if(func == '/') {
         val = memory / input;
-        
+      }
+      if(func == '%') { //余りの計算
+        val = memory % input;
       }
 
       return val;
@@ -50,21 +53,25 @@ var app = new Vue({
       if(this.isError) {
         return;
       }
-      if(this.inputValue == '0') { //0の時はただ変換するだけ
-        if(number !== '.') {
+      if(this.inputValue == '0' && number == '+/-') { //-0になるのを防ぐ
+        return;
+      }
+      if(this.inputValue == '0' && number !== '.' && number !== '+/-') { //純粋に0の時はただ変換するだけ
           this.inputValue = number;
           this.outputValue = this.inputValue;
           return;
-        }
       }
-      
+      if(number == '+/-') { // +/-の時はinputValueを変換
+        this.inputValue = -1 * this.inputValue;
+        this.outputValue = this.inputValue;
+        return;
+      }
       var parsed = this.inputValue + number; //文字列の連結
       this.inputValue = parsed;
       this.outputValue = this.inputValue; 
     },
     inputFunc(func) { //演算子を押したときのイベントメソッド
       if(this.isError) {
-        console.log('error');
         return;
       }
       if(this.inputValue == '0') { //イコール後
@@ -76,7 +83,7 @@ var app = new Vue({
         this.memory = val; 
         this.func = func; // イコール時に起動させるために設定
         this.inputValue = '0'; //inputValueを初期化
-        this.outputValue = val.toLocaleString(undefined, {maximumFractionDigits : 3});
+        this.outputValue = val.toLocaleString(undefined, {maximumFractionDigits : 3}); //小数点第三位まで表示
       }
     },
     equal() { //＝を押した時のイベントメソッド

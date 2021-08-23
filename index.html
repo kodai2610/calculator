@@ -16,7 +16,7 @@
           <tbody>
             <tr>
               <td><span class="el_btn el_btn__dark" v-on:click="clear">C</span></td>
-              <td><span class="el_btn el_btn__dark">+/-</span></td>
+              <td><span class="el_btn el_btn__dark" v-on:click="inputNumber('+/-')">+/-</span></td>
               <td><span class="el_btn el_btn__dark" v-on:click="inputFunc('%')">%</span></td>
               <td><span class="el_btn el_btn__dark" v-on:click="inputFunc('/')">÷</span></td>
             </tr>
@@ -33,7 +33,7 @@
               <td><span class="el_btn el_btn__dark" v-on:click="inputFunc('+')">+</span></td>
             </tr>
             <tr>
-              <td colspan="2"><span class="el_btn el_btn__big" v-on:click="inputNumber(0)">0</span></td>
+              <td colspan="2"><span class="el_btn el_btn__big" v-on:click="inputNumber('0')">0</span></td>
               <td><span class="el_btn" v-on:click="inputNumber('.')">.</span></td>
               <td><span class="el_btn el_btn__blue" v-on:click="equal">=</span></td>
             </tr>
