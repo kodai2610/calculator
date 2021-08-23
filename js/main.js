@@ -1,11 +1,12 @@
-var app = new Vue({
-  el : '#app',
-  data : { 
-    memory : null, //number
-    func : null, //string
-    inputValue : '0', //string 
-    outputValue : '0', //string
-    isError : false, //エラー時かどうか
+Vue.component('calculator-component', {
+  data : function() { //コンポーネントごとにデータを保持
+    return {
+      memory : null, //number
+      func : null, //string
+      inputValue : '0', //string 
+      outputValue : '0', //string
+      isError : false, //エラー時かどうか
+    }
   },
   methods : {
     error() { //エラー時のメソッド
@@ -98,6 +99,44 @@ var app = new Vue({
         this.outputValue = val.toLocaleString(undefined, {maximumFractionDigits: 3});
       }
     }
-  }
+  },
+  template : `
+  <div> 
+  <div class="bl_display"><span class="el_output">{{outputValue}}</span></div><!--bl_display-->
+  <div class="bl_crossTable">
+    <table>
+      <tbody>
+        <tr>
+          <td><span class="el_btn el_btn__dark" v-on:click="clear">C</span></td>
+          <td><span class="el_btn el_btn__dark" v-on:click="inputNumber('+/-')">+/-</span></td>
+          <td><span class="el_btn el_btn__dark" v-on:click="inputFunc('%')">%</span></td>
+          <td><span class="el_btn el_btn__dark" v-on:click="inputFunc('/')">÷</span></td>
+        </tr>
+        <tr>
+          <td v-for="number in ['7','8','9']"><span class="el_btn" v-on:click="inputNumber(number)">{{number}}</span></td>
+          <td><span class="el_btn el_btn__dark" v-on:click="inputFunc('*')">×</span></td>
+        </tr>
+        <tr>
+          <td v-for="number in ['4','5','6']"><span class="el_btn" v-on:click="inputNumber(number)">{{number}}</span></td>
+          <td><span class="el_btn el_btn__dark" v-on:click="inputFunc('-')">-</span></td>
+        </tr>
+        <tr>
+          <td v-for="number in ['1','2','3']"><span class="el_btn" v-on:click="inputNumber(number)">{{number}}</span></td>
+          <td><span class="el_btn el_btn__dark" v-on:click="inputFunc('+')">+</span></td>
+        </tr>
+        <tr>
+          <td colspan="2"><span class="el_btn el_btn__big" v-on:click="inputNumber('0')">0</span></td>
+          <td><span class="el_btn" v-on:click="inputNumber('.')">.</span></td>
+          <td><span class="el_btn el_btn__blue" v-on:click="equal">=</span></td>
+        </tr>
+      </tbody> 
+    </table>
+  </div><!--bl_crossTable-->
+  </div>
+  `,
+})
+
+var app = new Vue({
+  el : '#app',
 });
 

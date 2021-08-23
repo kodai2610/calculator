@@ -27,6 +27,7 @@ $breakpoints : (
   padding-top: 50px;
   width: 100%;
   height: 100%;
+  user-select: none;
   @include media(s) {
     padding-top: 10px;
   }
@@ -107,7 +108,6 @@ $breakpoints : (
   border-radius: 50%;
   background-color: $lightGray;
   cursor: pointer;
-  user-select: none;
   @include media(s) {
     width: 21vw;
     height: 21vw;
@@ -138,3 +138,6 @@ $breakpoints : (
 }
 
 
+[v-cloak] {
+  display: none;
+}
