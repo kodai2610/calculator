@@ -62,6 +62,7 @@ $breakpoints : (
 
 .el_output {
   font-size: 60px;
+  overflow: auto;
   @include media(s) {
     font-size: 16vw;
   }
@@ -106,7 +107,7 @@ $breakpoints : (
   border-radius: 50%;
   background-color: $lightGray;
   cursor: pointer;
-
+  user-select: none;
   @include media(s) {
     width: 21vw;
     height: 21vw;
