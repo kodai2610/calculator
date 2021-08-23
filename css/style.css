@@ -6,6 +6,7 @@
   padding-top: 50px;
   width: 100%;
   height: 100%;
+  user-select: none;
 }
 
 @media only screen and (max-width: 420px) {
@@ -134,4 +135,8 @@
   .el_btn__big {
     padding-left: 10vw;
   }
+}
+
+[v-cloak] {
+  display: none;
 }
