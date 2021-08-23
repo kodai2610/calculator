@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
 #app {
   padding-top: 50px;
   width: 100%;
@@ -33,7 +37,7 @@
 }
 
 .bl_display {
-  padding: 0 29px;
+  padding: 0 34px;
   overflow-x: hidden;
   height: 180px;
   display: flex;
@@ -44,18 +48,18 @@
 @media only screen and (max-width: 420px) {
   .bl_display {
     height: 46vw;
-    padding: 0 7vw;
+    padding: 0 8.1vw;
   }
 }
 
 .el_output {
-  font-size: 60px;
+  font-size: 70px;
   overflow: auto;
 }
 
 @media only screen and (max-width: 420px) {
   .el_output {
-    font-size: 16vw;
+    font-size: 18.666vw;
   }
 }
 
@@ -79,13 +83,13 @@
   table-layout: fixed;
   border-collapse: separate;
   border-spacing: 0 15px;
-  margin-top: -15px;
+  margin-top: -12px;
 }
 
 @media only screen and (max-width: 420px) {
   .bl_crossTable table {
     border-spacing: 0 3.16666vw;
-    margin-top: -3.1666666vw;
+    margin-top: -3.2vw;
   }
 }
 
