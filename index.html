@@ -10,39 +10,10 @@
 <body>
   <div id="app">
     <div class="bl_app" v-cloak>
-      <div class="bl_display"><span class="el_output">{{outputValue}}</span></div><!--bl_display-->
-      <div class="bl_crossTable">
-        <table>
-          <tbody>
-            <tr>
-              <td><span class="el_btn el_btn__dark" v-on:click="clear">C</span></td>
-              <td><span class="el_btn el_btn__dark" v-on:click="inputNumber('+/-')">+/-</span></td>
-              <td><span class="el_btn el_btn__dark" v-on:click="inputFunc('%')">%</span></td>
-              <td><span class="el_btn el_btn__dark" v-on:click="inputFunc('/')">÷</span></td>
-            </tr>
-            <tr>
-              <td v-for="number in ['7','8','9']"><span class="el_btn" v-on:click="inputNumber(number)">{{number}}</span></td>
-              <td><span class="el_btn el_btn__dark" v-on:click="inputFunc('*')">×</span></td>
-            </tr>
-            <tr>
-              <td v-for="number in ['4','5','6']"><span class="el_btn" v-on:click="inputNumber(number)">{{number}}</span></td>
-              <td><span class="el_btn el_btn__dark" v-on:click="inputFunc('-')">-</span></td>
-            </tr>
-            <tr>
-              <td v-for="number in ['1','2','3']"><span class="el_btn" v-on:click="inputNumber(number)">{{number}}</span></td>
-              <td><span class="el_btn el_btn__dark" v-on:click="inputFunc('+')">+</span></td>
-            </tr>
-            <tr>
-              <td colspan="2"><span class="el_btn el_btn__big" v-on:click="inputNumber('0')">0</span></td>
-              <td><span class="el_btn" v-on:click="inputNumber('.')">.</span></td>
-              <td><span class="el_btn el_btn__blue" v-on:click="equal">=</span></td>
-            </tr>
-          </tbody> 
-        </table>
-      </div><!--bl_crossTable-->
+      <calculator-component></calculator-component>
     </div><!--bl_app-->
   </div><!--#app-->
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
